@@ -1,45 +1,57 @@
-const button = document.getElementById('cta-button');
-const messages = [
-  'ENTRE AGORA NO MELHOR GRUPO DE SINAIS DO BRASIL',
-  'Nova estratégia liberada!',
-  'Grupo quase cheio! Últimas vagas!',
-  'Sinais atualizados em tempo real!',
-  'Mude sua vida com os sinais certos!'
+// Frases de impacto
+const frasesImpacto = [
+  "O próximo a mudar de vida pode ser você.",
+  "Chega de perder! Comece a ganhar agora.",
+  "Não fique de fora da nova era dos sinais.",
+  "Fortune Tiger não é sorte. É estratégia.",
+  "Quem lucra hoje, decidiu ontem. Entre já."
+];
+document.getElementById("frase-impacto").innerText =
+  frasesImpacto[Math.floor(Math.random() * frasesImpacto.length)];
+
+// Frases de urgência que mudam a cada reload
+const mensagensUrgencia = [
+  "⚠️ As vagas estão acabando, entre agora! ⚠️",
+  "⏳ Grupo quase cheio, essa pode ser sua última chance!",
+  "🔥 Os sinais mais quentes estão rolando agora mesmo!",
+  "💥 Já estamos no terceiro lucro do dia. Corre!",
+  "📉 Cada minuto fora do grupo é lucro perdido."
+];
+document.getElementById("mensagem-urgente").innerText =
+  mensagensUrgencia[Math.floor(Math.random() * mensagensUrgencia.length)];
+
+// Atualiza número de pessoas online fake
+setInterval(() => {
+  const online = Math.floor(Math.random() * (950 - 780 + 1)) + 780;
+  document.getElementById("online-count").innerText = `👥 ${online} jogadores online agora`;
+}, 4000);
+
+// Texto do botão mudando automaticamente
+const btn = document.getElementById("cta-button");
+const frasesBotao = [
+  "ENTRE AGORA NO MELHOR GRUPO DE SINAIS DO BRASIL",
+  "🔥 Nova estratégia liberada!",
+  "⚡ Grupo quase cheio! Últimas vagas!",
+  "💰 Mude sua vida com os sinais certos!"
+];
+function mudarTextoBotao() {
+  btn.innerText = frasesBotao[Math.floor(Math.random() * frasesBotao.length)];
+  setTimeout(mudarTextoBotao, Math.floor(Math.random() * 7000) + 8000);
+}
+mudarTextoBotao();
+
+// Feedbacks fake
+const feedbacks = [
+  { nome: "Amanda - BA", texto: "Fiz R$ 230 em 2 dias com os sinais. Inacreditável!" },
+  { nome: "Rafael - SP", texto: "O grupo realmente entrega o que promete. Lucro real!" },
+  { nome: "Camila - MG", texto: "Entrei com medo, hoje indico pra todos meus amigos!" },
+  { nome: "Bruno - SC", texto: "Nunca pensei que dava pra ganhar assim, top demais!" }
 ];
 
-function changeButtonText() {
-  const random = Math.floor(Math.random() * messages.length);
-  button.innerText = messages[random];
-  const nextChange = Math.floor(Math.random() * (13 - 7 + 1) + 7) * 1000;
-  setTimeout(changeButtonText, nextChange);
-}
-changeButtonText();
-
-const online = document.getElementById('online-count');
-
-function updateOnline() {
-  const fakeOnline = Math.floor(Math.random() * (1010 - 720) + 720);
-  online.textContent = `👥 ${fakeOnline} jogadores online agora`;
-}
-setInterval(updateOnline, 4000);
-
-const feedbackList = [
-  { nome: "João - SP", texto: "Já recuperei meu investimento em 2 dias!" },
-  { nome: "Karla - PR", texto: "Pensava que era enganação… tô no lucro!" },
-  { nome: "Lucas - RJ", texto: "Valeu a pena demais, sinais certeiros." },
-  { nome: "Aline - MG", texto: "Já fiz meu primeiro saque. Top demais!" },
-  { nome: "Diego - BA", texto: "Recomendei pra todo mundo aqui!" }
-];
-
-const feedbackDiv = document.getElementById('feedbacks');
-
-function renderFeedbacks() {
-  feedbackDiv.innerHTML = "";
-  feedbackList.forEach(fb => {
-    const el = document.createElement('div');
-    el.className = "feedback-card";
-    el.innerHTML = `<h4>${fb.nome}</h4><p>${fb.texto}</p>`;
-    feedbackDiv.appendChild(el);
-  });
-}
-renderFeedbacks();
+const container = document.getElementById("feedbacks");
+feedbacks.forEach((f) => {
+  const card = document.createElement("div");
+  card.className = "feedback-card";
+  card.innerHTML = `<h4>${f.nome}</h4><p>${f.texto}</p>`;
+  container.appendChild(card);
+});
