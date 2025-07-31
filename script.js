@@ -1,11 +1,10 @@
-// Troca de texto automática no botão
 const button = document.getElementById('cta-button');
 const messages = [
-  'CLICA AQUI',
-  'Nova estratégia disponível!',
-  'Aproveite antes que acabe!',
-  'Última chance do dia!',
-  'Ganhe enquanto os outros dormem!'
+  'ENTRE AGORA NO MELHOR GRUPO DE SINAIS DO BRASIL',
+  'Nova estratégia liberada!',
+  'Grupo quase cheio! Últimas vagas!',
+  'Sinais atualizados em tempo real!',
+  'Mude sua vida com os sinais certos!'
 ];
 
 function changeButtonText() {
@@ -16,30 +15,31 @@ function changeButtonText() {
 }
 changeButtonText();
 
-// Contador fake de jogadores online
 const online = document.getElementById('online-count');
 
 function updateOnline() {
-  const fakeOnline = Math.floor(Math.random() * (1000 - 720) + 720);
+  const fakeOnline = Math.floor(Math.random() * (1010 - 720) + 720);
   online.textContent = `👥 ${fakeOnline} jogadores online agora`;
 }
 setInterval(updateOnline, 4000);
 
-// Feedbacks fakes
-const feedbacks = [
-  '“Entrei ontem e já bati minha primeira meta!” — João/SP',
-  '“Pensava que era enganação… tô no lucro!” — Karla/PR',
-  '“Valeu a pena demais, sinais certeiros.” — Lucas/RJ',
-  '“Já fiz meu primeiro saque. Top demais!” — Aline/MG',
-  '“Recomendei pra todo mundo aqui.” — Diego/BA'
+const feedbackList = [
+  { nome: "João - SP", texto: "Já recuperei meu investimento em 2 dias!" },
+  { nome: "Karla - PR", texto: "Pensava que era enganação… tô no lucro!" },
+  { nome: "Lucas - RJ", texto: "Valeu a pena demais, sinais certeiros." },
+  { nome: "Aline - MG", texto: "Já fiz meu primeiro saque. Top demais!" },
+  { nome: "Diego - BA", texto: "Recomendei pra todo mundo aqui!" }
 ];
 
-let feedbackIndex = 0;
 const feedbackDiv = document.getElementById('feedbacks');
 
-function changeFeedback() {
-  feedbackDiv.innerHTML = `<p>${feedbacks[feedbackIndex]}</p>`;
-  feedbackIndex = (feedbackIndex + 1) % feedbacks.length;
+function renderFeedbacks() {
+  feedbackDiv.innerHTML = "";
+  feedbackList.forEach(fb => {
+    const el = document.createElement('div');
+    el.className = "feedback-card";
+    el.innerHTML = `<h4>${fb.nome}</h4><p>${fb.texto}</p>`;
+    feedbackDiv.appendChild(el);
+  });
 }
-setInterval(changeFeedback, 5000);
-changeFeedback();
+renderFeedbacks();
