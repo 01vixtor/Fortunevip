@@ -6,92 +6,100 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #0e0e0e;
+  background: #0a0f1c;
   color: #fff;
-  line-height: 1.6;
   padding: 20px;
 }
 
 header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+h1 {
+  font-size: 2.8rem;
+  color: #00c3ff;
 }
 
-header p {
+p {
   font-size: 1.1rem;
-  margin-bottom: 20px;
+  margin: 15px 0;
 }
 
-.btn-destaque {
-  display: inline-block;
-  background: #f5c518;
-  color: #000;
-  padding: 15px 30px;
-  text-decoration: none;
+.btn-principal {
+  background: #00c3ff;
+  color: #0a0f1c;
+  padding: 15px 25px;
   font-weight: bold;
-  border-radius: 8px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 10px 0;
   transition: 0.3s;
 }
 
-.btn-destaque:hover {
-  background: #d4aa00;
+.btn-principal:hover {
+  background: #00a0d0;
 }
 
-.urgencia {
-  margin-top: 10px;
-  color: #f5c518;
+.contador-texto {
+  color: #ffce00;
   font-weight: bold;
 }
 
 section {
-  margin: 40px 0;
+  margin: 50px 0;
   text-align: center;
 }
 
-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #f5c518;
-}
-
-.depoimentos {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.card {
-  background: #1e1e1e;
-  border-left: 4px solid #f5c518;
-  padding: 20px;
-  border-radius: 6px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.autoridade ul {
+ul {
   list-style: none;
-  padding: 0;
+  margin-top: 20px;
 }
 
-.autoridade li {
+ul li {
   margin: 10px 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  color: #ccc;
 }
 
 footer {
   text-align: center;
-  margin-top: 50px;
   font-size: 0.9rem;
+  margin-top: 50px;
   color: #777;
 }
 
 .legal {
   margin-top: 10px;
   font-size: 0.8rem;
+}
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  padding: 12px 18px;
+  border-radius: 50px;
+  z-index: 1000;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.whatsapp-btn a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.frase {
+  font-style: italic;
+  font-size: 1.1rem;
+  padding: 15px;
+  background: #111623;
+  border-left: 4px solid #00c3ff;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 6px;
+  min-height: 60px;
 }
