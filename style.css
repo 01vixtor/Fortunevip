@@ -1,153 +1,97 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
-  color: white;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0e0e0e;
+  color: #fff;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
   text-align: center;
+  margin-bottom: 50px;
 }
 
-.container {
-  padding: 30px 20px;
-  animation: fadeIn 1s ease-in;
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.main-title {
-  font-family: 'Impact', sans-serif;
-  color: #FFA500;
-  font-size: 2.7em;
-  text-shadow: 0 0 10px #FF4500;
-}
-
-.sub, .frase-impacto {
-  font-size: 1.3em;
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: #ffcc70;
-}
-
-.etapas {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+header p {
+  font-size: 1.1rem;
   margin-bottom: 20px;
 }
 
-.etapa {
-  background-color: #1f1f1f;
-  padding: 10px;
-  border-radius: 8px;
-  border-left: 4px solid #FFA500;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-.players-online,
-.pessoas-ganharam,
-.entradas-hoje {
-  font-size: 0.95em;
-  color: #ccc;
-  margin: 4px 0;
-}
-
-.cta-button {
+.btn-destaque {
   display: inline-block;
-  padding: 15px 25px;
-  background: linear-gradient(45deg, #FFA500, #FF4500);
-  color: white;
+  background: #f5c518;
+  color: #000;
+  padding: 15px 30px;
   text-decoration: none;
-  border-radius: 10px;
-  font-size: 1.2em;
   font-weight: bold;
+  border-radius: 8px;
   transition: 0.3s;
 }
 
-.cta-button:hover {
-  transform: scale(1.05);
-  background: #FF6347;
+.btn-destaque:hover {
+  background: #d4aa00;
 }
 
-.urgente {
-  margin-top: 15px;
-  font-size: 1em;
-  color: #ff3333;
+.urgencia {
+  margin-top: 10px;
+  color: #f5c518;
   font-weight: bold;
 }
 
-.descricao, .duvidas {
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #141414;
-  border-radius: 10px;
-  color: #ddd;
-  max-width: 600px;
-  text-align: left;
+section {
+  margin: 40px 0;
+  text-align: center;
 }
 
-.titulo-feedback {
-  color: #FFA500;
-  margin-top: 40px;
-  font-size: 1.5em;
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #f5c518;
 }
 
-.feedbacks {
+.depoimentos {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 20px;
 }
 
-.feedback-card {
-  background: white;
-  color: #222;
-  padding: 15px 20px;
-  border-radius: 10px;
-  max-width: 320px;
-  text-align: left;
-  box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+.card {
+  background: #1e1e1e;
+  border-left: 4px solid #f5c518;
+  padding: 20px;
+  border-radius: 6px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.feedback-card h4 {
-  margin: 0 0 8px 0;
-  font-size: 1em;
-  color: #FF4500;
+.autoridade ul {
+  list-style: none;
+  padding: 0;
 }
 
-.feedback-card p {
-  margin: 0;
-  font-size: 0.95em;
-  line-height: 1.4;
+.autoridade li {
+  margin: 10px 0;
+  font-size: 1.1rem;
 }
 
 footer {
+  text-align: center;
   margin-top: 50px;
-  font-size: 0.85em;
+  font-size: 0.9rem;
   color: #777;
-  padding-bottom: 40px;
 }
 
-.links-rodape a {
-  color: #FFA500;
-  text-decoration: none;
-  font-size: 0.9em;
-}
-
-.float-telegram {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: white;
-  border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.3);
-}
-.float-telegram img {
-  width: 40px;
-  height: 40px;
+.legal {
+  margin-top: 10px;
+  font-size: 0.8rem;
 }
